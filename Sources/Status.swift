@@ -1,4 +1,5 @@
 import Foundation
+import PerfectSysInfo
 
 struct Status {
 
@@ -8,6 +9,10 @@ struct Status {
                         guard let o = output else { return "" }
                         return o.trim()
                 }
+        }
+
+        func printIt() {
+        	print(SysInfo.CPU)
         }
 
 

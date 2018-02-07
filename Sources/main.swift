@@ -5,9 +5,14 @@ import PerfectHTTPServer
 // An example request handler.
 // This 'handler' function can be referenced directly in the configuration below.
 func handler(request: HTTPRequest, response: HTTPResponse) {
+
+
+	let status = Status()
+	status.printIt()
+
 	// Respond with a simple message.
 	response.setHeader(.contentType, value: "text/html")
-	response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
+	response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, \(status.name)!</body></html>")
 	// Ensure that response.completed() is called when your processing is done.
 	response.completed()
 }
